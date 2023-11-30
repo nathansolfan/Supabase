@@ -13,6 +13,11 @@ const Home = () => {
         setError("Could not fetch data");
         console.log(error);
       }
+
+      if (data) {
+        setTest(data);
+        setError(null);
+      }
     };
   });
 
