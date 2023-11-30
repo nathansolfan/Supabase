@@ -19,7 +19,8 @@ const Home = () => {
         setError(null);
       }
     };
-  });
+    fetch();
+  }, []);
 
   console.log(supabase);
   return (
