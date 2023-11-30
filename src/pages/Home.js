@@ -5,7 +5,11 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [test, setTest] = useState(null);
 
-  useEffect(() => {});
+  useEffect(() => {
+    const fetch = async () => {
+      const { data, error } = await supabase.from("test").select();
+    };
+  });
 
   console.log(supabase);
   return (
