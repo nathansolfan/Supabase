@@ -8,6 +8,11 @@ const Home = () => {
   useEffect(() => {
     const fetch = async () => {
       const { data, error } = await supabase.from("test").select();
+
+      if (error) {
+        setError("Could not fetch data");
+        console.log(error);
+      }
     };
   });
 
