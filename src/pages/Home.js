@@ -3,7 +3,7 @@ import supabase from "../config/supabaseClient";
 
 const Home = () => {
   const [error, setError] = useState(null);
-  const [test, setTest] = useState(null);
+  const [tests, setTests] = useState(null);
 
   useEffect(() => {
     const fetch = async () => {
@@ -15,7 +15,7 @@ const Home = () => {
       }
 
       if (data) {
-        setTest(data);
+        setTests(data);
         setError(null);
       }
     };
@@ -25,7 +25,17 @@ const Home = () => {
   console.log(supabase);
   return (
     <div className="page home">
-      <h2>Home</h2>
+      {/* DISPLAY ERROR */}
+      {error && <p> {error} </p>}
+
+      {/* DISPLAY DATA */}
+      {tests && (
+        <div className="">
+          {tests.map((test) => (
+            <p>{test.title}</p>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
