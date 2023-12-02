@@ -8,7 +8,15 @@ const Create = () => {
 
   return (
     <div className="page create">
-      <h2>Create</h2>
+      <form action="">
+        <label>Title:</label>
+        <input
+          type="text"
+          id="method"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+      </form>
     </div>
   );
 };
