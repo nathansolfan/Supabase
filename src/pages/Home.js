@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import supabase from "../config/supabaseClient";
 
+// components
+import TestExample from "../components/TestExample";
+
 const Home = () => {
   const [error, setError] = useState(null);
   const [tests, setTests] = useState(null);
@@ -32,7 +35,7 @@ const Home = () => {
       {tests && (
         <div className="">
           {tests.map((test) => (
-            <p>{test.title}</p>
+            <TestExample key={test.id} prop={test} />
           ))}
         </div>
       )}
