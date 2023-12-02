@@ -36,6 +36,7 @@ const Home = () => {
         <div className="">
           {tests.map((test) => (
             <TestExample key={test.id} prop={test} />
+            // min 14 video nr3
           ))}
         </div>
       )}
