@@ -9,6 +9,10 @@ const Create = () => {
   // get (e) automatically when submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!title || !method || !rating) {
+      setFormError("Please fill the all the fields");
+    }
   };
 
   return (
