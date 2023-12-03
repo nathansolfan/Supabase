@@ -34,6 +34,9 @@ const Create = () => {
         />
 
         <button>Create test</button>
+
+        {/* if error, display */}
+        {formError && <p className="error"> {formError} </p>}
       </form>
     </div>
   );
