@@ -12,7 +12,9 @@ const Create = () => {
 
     if (!title || !method || !rating) {
       setFormError("Please fill the all the fields");
+      return;
     }
+    console.log(title, rating, method);
   };
 
   return (
