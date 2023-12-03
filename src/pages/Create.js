@@ -6,6 +6,11 @@ const Create = () => {
   const [rating, setRating] = useState("");
   const [formError, setFormError] = useState("");
 
+  // get (e) automatically when submit form
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="page create">
       <form onSubmit={handleSubmit}>
