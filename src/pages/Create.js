@@ -12,9 +12,25 @@ const Create = () => {
         <label>Title:</label>
         <input
           type="text"
-          id="method"
+          id="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+        />
+
+        <label>Method:</label>
+        <input
+          type="text"
+          id="method"
+          value={method}
+          onChange={(e) => setMethod(e.target.value)}
+        />
+
+        <label>Rating:</label>
+        <input
+          type="text"
+          id="rating"
+          value={rating}
+          onChange={(e) => setRating(e.target.value)}
         />
       </form>
     </div>
