@@ -8,7 +8,7 @@ const Create = () => {
 
   return (
     <div className="page create">
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <label>Title:</label>
         <input
           type="text"
@@ -32,6 +32,8 @@ const Create = () => {
           value={rating}
           onChange={(e) => setRating(e.target.value)}
         />
+
+        <button>Create test</button>
       </form>
     </div>
   );
