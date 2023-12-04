@@ -5,7 +5,7 @@ import supabase from "../config/supabaseClient";
 import TestExample from "../components/TestExample";
 
 const Home = () => {
-  const [error, setError] = useState(null);
+  const [fetcherror, fetchSetError] = useState(null);
   const [tests, setTests] = useState(null);
 
   useEffect(() => {
@@ -13,13 +13,14 @@ const Home = () => {
       const { data, error } = await supabase.from("test").select();
 
       if (error) {
-        setError("Could not fetch data");
+        fetchSetError("Could not fetch data");
+        setTests(null);
         console.log(error);
       }
 
       if (data) {
         setTests(data);
-        setError(null);
+        fetchSetError(null);
       }
     };
     fetch();
@@ -29,13 +30,14 @@ const Home = () => {
   return (
     <div className="page home">
       {/* DISPLAY ERROR */}
-      {error && <p> {error} </p>}
+      {fetcherror && <p>{fetcherror}</p>}
 
       {/* DISPLAY DATA */}
       {tests && (
-        <div className="">
+        <div className="test">
           {tests.map((test) => (
-            <TestExample key={test.id} prop={test} />
+            // <p>{test.title}</p>
+            <TestExample key={test.id} test={test} />
             // min 14 video nr3
           ))}
         </div>
