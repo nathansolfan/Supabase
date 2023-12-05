@@ -36,7 +36,7 @@ const Create = () => {
   return (
     <div className="page create">
       <form onSubmit={handleSubmit}>
-        <label>Title:</label>
+        <label htmlFor="title">Title:</label>
         <input
           type="text"
           id="title"
@@ -44,7 +44,7 @@ const Create = () => {
           onChange={(e) => setTitle(e.target.value)}
         />
 
-        <label>Method:</label>
+        <label htmlFor="method">Method:</label>
         <input
           type="text"
           id="method"
@@ -52,7 +52,7 @@ const Create = () => {
           onChange={(e) => setMethod(e.target.value)}
         />
 
-        <label>Rating:</label>
+        <label htmlFor="rating">Rating:</label>
         <input
           type="number"
           id="rating"
@@ -63,7 +63,7 @@ const Create = () => {
         <button>Create test</button>
 
         {/* if error, display */}
-        {formError && <p className="error"> {formError} </p>}
+        {formError && <p className="error">{formError}</p>}
       </form>
     </div>
   );
