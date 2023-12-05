@@ -7,8 +7,8 @@ export default function TestExample({ test }) {
       <h3> {test.title} </h3>
       <p> {test.method} </p>
       <div>{test.rating}</div>
-      <Link>
-        <div>{"/" + test.id}</div>
+      <Link to={"/" + test.id}>
+        <i className="material-icons">edit</i>
       </Link>
     </div>
   );
