@@ -26,7 +26,6 @@ const Home = () => {
     fetch();
   }, []);
 
-  console.log(supabase);
   return (
     <div className="page home">
       {/* DISPLAY ERROR */}
