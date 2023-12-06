@@ -22,6 +22,9 @@ const Update = () => {
         navigate("/", { replace: true });
       }
       if (data) {
+        setTitle(data.title);
+        setMethod(data.method);
+        setRating(data.rating);
       }
     };
   });
