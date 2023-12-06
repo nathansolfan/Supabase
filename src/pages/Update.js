@@ -1,10 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import supabase from "../config/supabaseClient";
 
 const Update = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const [title, setTitle] = useState("");
+  const [method, setMethod] = useState("");
+  const [rating, setRating] = useState("");
 
   useEffect(() => {
     const fetchTest = async () => {
