@@ -27,7 +27,9 @@ const Update = () => {
         setRating(data.rating);
       }
     };
-  });
+    fetchTest();
+    // remember to declare those
+  }, [id, navigate]);
 
   return (
     <div className="page update">
