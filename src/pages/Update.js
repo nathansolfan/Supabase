@@ -25,6 +25,7 @@ const Update = () => {
         setTitle(data.title);
         setMethod(data.method);
         setRating(data.rating);
+        console.log(data);
       }
     };
     fetchTest();
