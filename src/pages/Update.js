@@ -12,7 +12,7 @@ const Update = () => {
 
   useEffect(() => {
     const fetchTest = async () => {
-      const { data, error } = supabase
+      const { data, error } = await supabase
         .from("test")
         .select()
         .eq("id", id)
@@ -34,7 +34,7 @@ const Update = () => {
 
   return (
     <div className="page update">
-      <h2>Update - {id}</h2>
+      <form action=""></form>
     </div>
   );
 };
