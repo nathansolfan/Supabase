@@ -9,6 +9,15 @@ const Update = () => {
   const [title, setTitle] = useState("");
   const [method, setMethod] = useState("");
   const [rating, setRating] = useState("");
+  const [formError, setFormError] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!title || !method || !rating) {
+      setFormError("Please fill the fields");
+    }
+  };
 
   useEffect(() => {
     const fetchTest = async () => {
@@ -34,7 +43,7 @@ const Update = () => {
 
   return (
     <div className="page update">
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>
         <input
           type="text"
@@ -59,10 +68,10 @@ const Update = () => {
           onChange={(e) => setRating(e.target.value)}
         />
 
-        <button>Create test</button>
+        <button>Update Page</button>
 
         {/* if error, display */}
-        {formError && <p className="error">{formError}</p>}
+        {/* {formError && <p className="error">{formError}</p>} */}
       </form>
     </div>
   );
