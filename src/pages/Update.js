@@ -16,6 +16,19 @@ const Update = () => {
 
     if (!title || !method || !rating) {
       setFormError("Please fill the fields");
+      return;
+    }
+
+    const { data, error } = await supabase
+      .from("test")
+      .update({ title, method, rating })
+      // (eq means where something is equal)
+      .eq("id", id)
+      .select();
+
+    if (error) {
+      console.log(error);
+      setFormError;
     }
   };
 
@@ -71,7 +84,7 @@ const Update = () => {
         <button>Update Page</button>
 
         {/* if error, display */}
-        {/* {formError && <p className="error">{formError}</p>} */}
+        {formError && <p className="error">{formError}</p>}
       </form>
     </div>
   );
