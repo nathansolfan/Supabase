@@ -28,7 +28,12 @@ const Update = () => {
 
     if (error) {
       console.log(error);
-      setFormError;
+      setFormError("Please fill it");
+    }
+
+    if (data) {
+      console.log(data);
+      setFormError(null);
     }
   };
 
