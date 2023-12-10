@@ -34,6 +34,7 @@ const Update = () => {
     if (data) {
       console.log(data);
       setFormError(null);
+      navigate("/");
     }
   };
 
