@@ -4,7 +4,7 @@ import supabase from "../config/supabaseClient";
 
 export default function TestExample({ test }) {
   const handleDelete = async () => {
-    const [data, error] = await supabase.from("test");
+    const [data, error] = await supabase.from("test").delete();
   };
 
   return (
