@@ -10,6 +10,7 @@ export default function TestExample({ test }) {
       <Link to={"/" + test.id}>
         <i className="material-icons">edit</i>
       </Link>
+      <i>delete</i>
     </div>
   );
 }
