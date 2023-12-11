@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import supabase from "../config/supabaseClient";
 
 export default function TestExample({ test }) {
+  const handleDelete = async () => {
+    const [] = await supabase;
+  };
+
   return (
     <div>
       <h3> {test.title} </h3>
@@ -10,7 +15,7 @@ export default function TestExample({ test }) {
       <Link to={"/" + test.id}>
         <i className="material-icons">edit</i>
       </Link>
-      <i>delete</i>
+      <i onClick={handleDelete}>delete</i>
     </div>
   );
 }
