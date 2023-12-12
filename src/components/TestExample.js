@@ -9,6 +9,13 @@ export default function TestExample({ test }) {
       .delete()
       .eq("id", test.id)
       .select();
+
+    if (error) {
+      console.log(error);
+    }
+    if (data) {
+      console.log(data);
+    }
   };
 
   return (
