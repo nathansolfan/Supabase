@@ -8,6 +8,9 @@ const Home = () => {
   const [fetcherror, fetchSetError] = useState(null);
   const [tests, setTests] = useState(null);
 
+  // handleDelete function to update the state
+  const handleDelete = () => {};
+
   useEffect(() => {
     const fetch = async () => {
       const { data, error } = await supabase.from("test").select();
