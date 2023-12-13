@@ -9,7 +9,13 @@ const Home = () => {
   const [tests, setTests] = useState(null);
 
   // handleDelete function to update the state
-  const handleDelete = () => {};
+  // takes ID as argument
+  // setTest( prevID => {}) fires a function
+  const handleDelete = (id) => {
+    setTests((prevTests) => {
+      return prevTests.filter((tst) => tst.id !== id);
+    });
+  };
 
   useEffect(() => {
     const fetch = async () => {
