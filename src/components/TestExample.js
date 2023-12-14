@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import supabase from "../config/supabaseClient";
 
-export default function TestExample({ test }) {
+// accept onDelete as prop
+export default function TestExample({ test, onDelete }) {
   const handleDelete = async () => {
     const [data, error] = await supabase
       .from("test")
@@ -15,6 +16,7 @@ export default function TestExample({ test }) {
     }
     if (data) {
       console.log(data);
+      onDelete(test.id);
     }
   };
 
