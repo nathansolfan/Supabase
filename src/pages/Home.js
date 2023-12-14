@@ -11,6 +11,7 @@ const Home = () => {
   // handleDelete function to update the state
   // takes ID as argument
   // setTest( prevID => {}) fires a function
+
   const handleDelete = (id) => {
     setTests((prevTests) => {
       return prevTests.filter((tst) => tst.id !== id);
@@ -45,8 +46,12 @@ const Home = () => {
         <div className="test">
           {tests.map((test) => (
             // <p>{test.title}</p>
-            <TestExample key={test.id} test={test} />
-            // min 14 video nr3
+            <TestExample
+              key={test.id}
+              test={test}
+              // add prop equal to the func created
+              onDelete={handleDelete}
+            />
           ))}
         </div>
       )}
