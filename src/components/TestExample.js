@@ -25,10 +25,14 @@ export default function TestExample({ test, onDelete }) {
       <h3> {test.title} </h3>
       <p> {test.method} </p>
       <div>{test.rating}</div>
-      <Link to={"/" + test.id}>
-        <i className="material-icons">edit</i>
-      </Link>
-      <i onClick={handleDelete}>delete</i>
+      <div className="buttons">
+        <Link to={"/" + test.id}>
+          <i className="material-icons">edit</i>
+        </Link>
+        <i className="material-icons" onClick={handleDelete}>
+          delete
+        </i>
+      </div>
     </div>
   );
 }
