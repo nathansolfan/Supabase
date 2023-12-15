@@ -47,6 +47,14 @@ const Home = () => {
       {/* DISPLAY DATA */}
       {tests && (
         <div className="test">
+          <div>
+            <p>Order by:</p>
+            <button onClick={() => setOrderBy("created_at")}>
+              Time Created
+            </button>
+            <button onClick={() => setOrderBy("title")}>Title</button>
+            <button onClick={() => setOrderBy("rating")}>Rating</button>
+          </div>
           {tests.map((test) => (
             // <p>{test.title}</p>
             <TestExample
