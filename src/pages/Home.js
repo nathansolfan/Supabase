@@ -23,7 +23,10 @@ const Home = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const { data, error } = await supabase.from("test").select().order();
+      const { data, error } = await supabase
+        .from("test")
+        .select()
+        .order(orderBy, { ascending: false });
 
       if (error) {
         fetchSetError("Could not fetch data");
