@@ -23,7 +23,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const { data, error } = await supabase.from("test").select();
+      const { data, error } = await supabase.from("test").select().order();
 
       if (error) {
         fetchSetError("Could not fetch data");
@@ -54,6 +54,7 @@ const Home = () => {
             </button>
             <button onClick={() => setOrderBy("title")}>Title</button>
             <button onClick={() => setOrderBy("rating")}>Rating</button>
+            {orderBy}
           </div>
           {tests.map((test) => (
             // <p>{test.title}</p>
